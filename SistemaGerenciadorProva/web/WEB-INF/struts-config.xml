@@ -16,9 +16,28 @@
 
     <global-forwards>
         <forward name="welcome"  path="/Welcome.do"/>
+        <forward name="sucesso_cadastrar" path="/sucesso_cadastro.jsp" />
+        <forward name="sucesso_alterar" path="/sucesso_alterar.jsp" />
+        <forward name="sucesso_excluir" path="/sucesso_excluir.jsp" />
     </global-forwards>
 
     <action-mappings>
+        <action path="/ListaInstituicoes" type="struts.ListaInstituicoes">
+            <forward name="lista_instituicoes" path="/ListaInstituicoes.jsp" />
+        </action>
+        <action path="/processainstituicao" type="struts.processainstituicao">
+            <forward name="listainstituicoes" path="/ListaInstituicoesAltera.jsp" />
+        </action>
+        <action path="/escolheinstituicao" type="struts.escolheinstituicao">
+             <forward name="alteradadosinstituicao" path="/AlteraDadosInstituicao.jsp" />
+        </action>
+        <action path="/processainstituicaoexcluir" type="struts.processainstituicaoexcluir">
+            <forward name="listainstituicoesexcluir" path="/ListaInstituicoesExcluir.jsp" />
+        </action>
+        <action path="/excluiinstituicao" type="struts.excluiinstituicao"/>
+        <action path="/alterainstituicao" type="struts.alterainstituicao"/>
+        <action path="/cadastrainstituicao" type="struts.cadastrainstituicao"/>
+        <action path="/cadastraaluno" type="struts.cadastraaluno"/>
         <action path="/Welcome" forward="/welcomeStruts.jsp"/>
     </action-mappings>
     

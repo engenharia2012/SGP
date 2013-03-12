@@ -1,4 +1,21 @@
-<%@page contentType="text/html"%>
-<%@page pageEncoding="UTF-8"%>
+<%-- 
+    Document   : index
+    Created on : 08/03/2013, 13:44:36
+    Author     : Fernando
+--%>
 
-<jsp:forward page="Welcome.do"/>
+<%@page contentType="text/html" pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+        <title>Inicio Protótipo</title>
+    </head>
+    <body>
+        <h3>Gerador de Questões</h3>
+        <a href ="CadastroInstituicao.jsp">Cadastrar Instituição</a><br/>
+        <a href="ListaInstituicoes.do">Lista Instituições Cadastradas</a><br/>
+        <a href="processainstituicao.do">Alterar Dados da Instituição</a><br/>
+        <a href="processainstituicaoexcluir.do">Excluir Instituição</a><br/>
+    </body>
+</html>
