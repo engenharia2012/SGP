@@ -1,4 +1,4 @@
-
+/* Arquivo Area */
 package dao;
 
 import dominio.Area;
