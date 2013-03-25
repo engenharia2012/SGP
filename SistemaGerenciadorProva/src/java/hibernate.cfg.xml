@@ -6,7 +6,7 @@
     <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
     <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/gerador_prova?charSet=UTF-8</property>
     <property name="hibernate.connection.username">postgres</property>
-    <property name="hibernate.connection.password">12345</property>
+    <property name="hibernate.connection.password">1233</property>
     
      <!-- Enable Hibernate's automatic session context management -->
         <property name="current_session_context_class">thread</property>

@@ -19,7 +19,7 @@ import org.apache.struts.action.ActionMapping;
 public class alteraarea extends org.apache.struts.action.Action {
 
     /* forward name="success" path="" */
-    private static final String SUCCESS = "success";
+    private static final String SUCCESS = "sucesso_alterar";
 
     /**
      * This is the action called from the Struts framework.
@@ -38,9 +38,10 @@ public class alteraarea extends org.apache.struts.action.Action {
                 Area area = new Area();
         AreaDao areadao = new AreaDao();
         area.setId(Integer.parseInt(request.getParameter("textId")));
-        area.setNome(request.getParameter("textNome"));
+        area.setNome(request.getParameter("textNomeArea"));
+        String nome = area.getNome();
         areadao.addOrUpd(area);
-        
+        request.setAttribute("nome", nome);
         return mapping.findForward(SUCCESS);
     }
 }
