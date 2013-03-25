@@ -15,7 +15,10 @@
         <h3>Gerador de Questões</h3>
         <a href ="CadastroInstituicao.jsp">Cadastrar Instituição</a><br/>
         <a href="ListaInstituicoes.do">Lista Instituições Cadastradas</a><br/>
+        <a href="Listaarea.do">Lista Area Cadastradas</a><br/>
         <a href="processainstituicao.do">Alterar Dados da Instituição</a><br/>
         <a href="processainstituicaoexcluir.do">Excluir Instituição</a><br/>
+        <a href="processaalterararea.do">Alterar Area</a><br/>
+        <a href="processaareaexcluir.do">Excluir Area</a><br/>
     </body>
 </html>

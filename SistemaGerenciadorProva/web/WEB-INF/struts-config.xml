@@ -34,6 +34,22 @@
         <action path="/processainstituicaoexcluir" type="struts.processainstituicaoexcluir">
             <forward name="listainstituicoesexcluir" path="/ListaInstituicoesExcluir.jsp" />
         </action>
+        <action path="/processaareaexcluir" type="struts.processaareaexcluir">
+            <forward name="listaareaexcluir" path="/ListaAreaExcluir.jsp" />
+        </action>
+        <action path="/escolhearea" type="struts.escolhearea">
+        <forward name="alteraarea" path="/AlteraDadosArea.jsp" />
+        </action>
+        <action path="/processaalterararea" type="struts.processaalterararea">
+        <forward name="listaareaalterar" path="/Listaareaalterar.jsp" />
+        </action>
+        <action path="/processaarea" type="struts.Listaarea">
+            <forward name="listaarea" path="/ListaArea.jsp" />
+        </action>
+        <action path="/Listararea" type="struts.Listararea"/>
+        <action path="/alteraarea" type="struts.alteraarea"/>    
+        <action path="/excluiarea" type="struts.excluiarea"/>
+        <action path="/cadastraarea" type="struts.cadastraarea"/>
         <action path="/excluiinstituicao" type="struts.excluiinstituicao"/>
         <action path="/alterainstituicao" type="struts.alterainstituicao"/>
         <action path="/cadastrainstituicao" type="struts.cadastrainstituicao"/>

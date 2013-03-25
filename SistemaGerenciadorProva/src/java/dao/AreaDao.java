@@ -11,7 +11,7 @@ import org.hibernate.criterion.Expression;
 public class AreaDao extends dao {
     Query query;
     
-    public List<Area> getListaInstituicoes(){
+    public List<Area> getListaArea(){
       query = getSession().createQuery("from Area");
         return query.list();
     }
