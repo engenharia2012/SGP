@@ -19,6 +19,7 @@
         <forward name="sucesso_cadastrar" path="/sucesso_cadastro.jsp" />
         <forward name="sucesso_alterar" path="/sucesso_alterar.jsp" />
         <forward name="sucesso_excluir" path="/sucesso_excluir.jsp" />
+        <forward name="erro_jaexiste" path="/ErroExiste.jsp" />
     </global-forwards>
 
     <action-mappings>

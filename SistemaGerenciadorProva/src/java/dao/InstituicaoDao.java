@@ -27,4 +27,9 @@ public class InstituicaoDao extends dao {
         c.add(Expression.eq("id", id));
         return (Instituicao) c.uniqueResult();
     }
+    public Instituicao findByCnpj (String cnpj){
+        Criteria c = getSession().createCriteria(Instituicao.class);
+        c.add(Expression.eq("cnpj", cnpj));
+        return (Instituicao) c.uniqueResult();
+    }
 }
