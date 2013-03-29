@@ -31,5 +31,9 @@
         
         <mapping class="dominio.Instituicao"/>
         <mapping class="dominio.Area"/>
+        <mapping class="dominio.Usuario"/>
+        <mapping class="dominio.Professor"/>
+        <mapping class="dominio.Aluno"/>
+        <mapping class="dominio.Administrador"/>
   </session-factory>
 </hibernate-configuration>
