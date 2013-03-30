@@ -22,6 +22,27 @@
     </global-forwards>
 
     <action-mappings>
+        
+        <!-- ACTIONS ADMINISTRADOR -->
+        <action path="/CadastrarAdministrador" type="struts.CadastrarAdministrador">
+            <forward name="success" path="/administrador_cadastrado.jsp" />
+        </action>
+        <action path="/BuscarAdministradorAtualizar" type="struts.BuscarAdministradorAtualizar">
+            <forward name="success" path="/confirmar_atualizacao_admin.jsp" />
+        </action>
+        <action path="/AtualizarAdministrador" type="struts.AtualizarAdministrador">
+            <forward name="success" path="/administrador_atualizado.jsp" />
+        </action>
+        <action path="/DeletarAdministrador" type="struts.DeletarAdministrador">
+            <forward name="success" path="/confirmar_delecao_admin.jsp" />
+        </action>
+        <action path="/DeletarAdministradorConfirmado" type="struts.DeletarAdministradorConfirmado">
+            <forward name="success" path="/administrador_deletado.jsp" />
+        </action>
+        <action path="/BuscarAdministrador" type="struts.BuscarAdministrador">
+            <forward name="success" path="/administrador_buscado.jsp" />
+        </action>
+        
         <action path="/ListaInstituicoes" type="struts.ListaInstituicoes">
             <forward name="lista_instituicoes" path="/ListaInstituicoes.jsp" />
         </action>

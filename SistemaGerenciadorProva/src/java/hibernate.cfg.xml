@@ -4,9 +4,9 @@
   <session-factory>
     <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
     <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
-    <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/gerador_prova?charSet=UTF-8</property>
+    <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/simulado</property>
     <property name="hibernate.connection.username">postgres</property>
-    <property name="hibernate.connection.password">pgsql</property>
+    <property name="hibernate.connection.password">junior</property>
     
      <!-- Enable Hibernate's automatic session context management -->
         <property name="current_session_context_class">thread</property>
@@ -31,5 +31,6 @@
         
         <mapping class="dominio.Instituicao"/>
         <mapping class="dominio.Area"/>
+        <mapping class="dominio.Administrador"/>
   </session-factory>
 </hibernate-configuration>

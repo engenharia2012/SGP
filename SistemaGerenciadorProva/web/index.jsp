@@ -39,7 +39,16 @@
   <ul class="menu">
 	<li><a href="#" title="Inicial">Professor</a></li>
 	<li><a href="#" title="Sobre">Alunos</a></li>
-	<li><a href="#" title="Servi&ccedil;os">Instituição</a>
+	<li><a href="#" title="Servi&ccedil;os">Administrador</a>
+    	<ul>
+            <li><a href="cadastrar_admin.jsp" title="Cadastrar Instituição">Cadastrar</a></li>            
+            <li><a href="buscar_administrador.jsp" title="Pesquisar">Pesquisar</a></li>
+            <li><a href="atualizar_administrador.jsp" title="Alterar Dados">Alterar</a></li>
+            <li><a href="deletar_administrador.jsp" title="Excluir Instituição">Excluir</a>
+            </li>                    
+        </ul>
+        </li>
+        <li><a href="#" title="Servi&ccedil;os">Instituição</a>
     
     	<ul>
             <li><a href="CadastroInstituicao.jsp" title="Cadastrar Instituição">Cadastrar</a></li>            
@@ -49,7 +58,7 @@
             </li>                    
         </ul>
         
-    </li>
+        </li>
 	<li><a href="#" title="Porftolio">Provas</a>
 		<ul>
             <li><a href="#" title="Web design">Cadastrar</a></li>            
