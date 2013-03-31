@@ -46,6 +46,28 @@
         <action path="/processaarea" type="struts.Listaarea">
             <forward name="listaarea" path="/ListaArea.jsp" />
         </action>
+        <action path="/ListarAreaInstituicao" type="struts.ListarAreaInstituicao">
+            <forward name="success" path="/prof_cadastrar.jsp"/>
+        </action>
+        <action path="/CadastrarProfessor" type="struts.CadastrarProfessor">
+            <forward name="success" path="/prof_cadastrado.jsp"/>
+        </action>
+        <action path="/ListarProfessores" type="struts.ListarProfessores">
+            <forward name="success" path="/prof_lista.jsp"/>
+        </action>
+        <action path="/BuscarProfessorAtualizar" type="struts.BuscarProfessorAtualizar">
+            <forward name="success" path="/prof_conf_atual.jsp"/>
+        </action>
+        <action path="/AtualizarProfessor" type="struts.AtualizarProfessor">
+            <forward name="success" path="/prof_atualizado.jsp"/>
+        </action>
+        <action path="/BuscarProfessorDeletar" type="struts.BuscarProfessorDeletar">
+            <forward name="success" path="/prof_conf_remocao.jsp"/>
+        </action>
+        <action path="/RemoverProfessor" type="struts.RemoverProfessor">
+            <forward name="success" path="/prof_removido.jsp"/>
+        </action>
+        
         <action path="/Listararea" type="struts.Listararea"/>
         <action path="/alteraarea" type="struts.alteraarea"/>    
         <action path="/excluiarea" type="struts.excluiarea"/>
