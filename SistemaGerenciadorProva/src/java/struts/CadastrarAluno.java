@@ -4,8 +4,8 @@
  */
 package struts;
 
-import dao.ProfessorDao;
-import dominio.Professor;
+import dao.AlunoDao;
+import dominio.Aluno;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.apache.struts.action.ActionForm;
@@ -13,13 +13,12 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import util.HibernateUtil;
 
 /**
  *
  * @author jose
  */
-public class AtualizarProfessor extends org.apache.struts.action.Action {
+public class CadastrarAluno extends org.apache.struts.action.Action {
 
     /* forward name="success" path="" */
     private static final String SUCCESS = "success";
@@ -38,28 +37,21 @@ public class AtualizarProfessor extends org.apache.struts.action.Action {
     public ActionForward execute(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
-   
-        Session s = HibernateUtil.getSession();
+        
+        Session s = util.HibernateUtil.getSession();
         Transaction t = s.beginTransaction();
         
-        ProfessorDao pDao = new ProfessorDao();
+        AlunoDao alDao = new AlunoDao();
+        Aluno al = new Aluno();
         
+        al.setNome(request.getParameter("nome"));
+        al.setEmail(request.getParameter("email"));
+        al.setSenha(request.getParameter("senha"));
         
-        Professor pro = (Professor) pDao.findByName(request.getParameter("nome"));
+        alDao.addOrUpd(al);
+                
+        request.setAttribute("al", al);
         
-        if(pro!=null){
-            if(pro.getNome().equals(request.getParameter("nome"))){
-                pro.setNome(request.getParameter("nome")); 
-            } if(pro.getEmail().equals(request.getParameter("email"))){
-                pro.setEmail(request.getParameter("email")); 
-            } if(pro.getSenha().equals(request.getParameter("senha"))){
-                pro.setSenha(request.getParameter("senha")); 
-            } if(pro.getCpf().equals(request.getParameter("cpf"))){
-                pro.setCpf(request.getParameter("cpf")); 
-            }
-        }
-        pDao.addOrUpd(pro);
-        request.setAttribute("pro", pro);
         return mapping.findForward(SUCCESS);
     }
 }

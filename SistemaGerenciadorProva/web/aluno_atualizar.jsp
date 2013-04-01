@@ -1,10 +1,9 @@
 <%-- 
-    Document   : prof_conf_atual
-    Created on : 31/03/2013, 14:20:32
+    Document   : atualizar_aluno
+    Created on : 21/03/2013, 06:56:51
     Author     : jose
 --%>
 
-<%@page import="dominio.Professor"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
@@ -17,7 +16,6 @@
     <script language="javascript" type="text/javascript" src="libs/validacao.js"></script>
     <link href="style/style.css"  rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="libs/jqtransformplugin/jqtransform.css" type="text/css" media="all" />
-
 	
     <script type="text/javascript" src="libs/requiered/jquery.js" ></script>
     <script type="text/javascript" src="libs/jqtransformplugin/jquery.jqtransform.js" ></script>
@@ -31,8 +29,16 @@
   <body>
     <div class="container">
       <div class="header">
-        <ul class="menu"><%--menu top--%>
-	  <li><a href="#" title="Inicial">Professor</a>
+        <%--menu top--%><%--<ul class="menu">
+            <li><a href="#" title="Inicial">Professor</a>
+            <ul>
+              <li><a href="ListarAreaInstituicao.do" title="Web design">Cadastrar</a></li>            
+              <li><a href="#" title="SEO">Edita</a></li>
+              <li><a href="#" title="Design gr&aacute;fico">Excluir</a></li>
+              <li><a href="#" title="Design gr&aacute;fico">Listar</a></li>
+            </ul>
+          </li>
+	  <li><a href="#" title="Sobre">Alunos</a>
             <ul>
               <li><a href="#" title="Web design">Cadastrar</a></li>            
               <li><a href="#" title="SEO">Edita</a></li>
@@ -40,55 +46,57 @@
               <li><a href="#" title="Design gr&aacute;fico">Listar</a></li>
             </ul>
           </li>
-	  <li><a href="#" title="Sobre">Questão</a>
+          <li><a href="#" title="Sobre">Administrador</a>
             <ul>
               <li><a href="#" title="Web design">Cadastrar</a></li>            
-              <li><a href="#" title="SEO">Revisar</a></li>
-              <li><a href="#" title="Design gr&aacute;fico">Excluir</a></li>                    
+              <li><a href="#" title="SEO">Edita</a></li>
+              <li><a href="#" title="Design gr&aacute;fico">Excluir</a></li>
+              <li><a href="#" title="Design gr&aacute;fico">Listar</a></li>
             </ul>
           </li>
 	  <li><a href="#" title="Servi&ccedil;os">Instituição</a>
        	    <ul>
               <li><a href="#" title="Web design">Cadastrar</a></li>            
+              <li><a href="#" title="Web master">Pesquisar</a></li>
+              <li><a href="#" title="SEO">Alterar</a></li>
+              <li><a href="#" title="Design gr&aacute;fico">Excluir</a></li>                    
             </ul>  
           </li>
 	  <li><a href="#" title="Porftolio">Provas</a>
             <ul>
-              <li><a href="#" title="Web design">Gerar</a></li>            
+              <li><a href="#" title="Web design">Cadastrar</a></li>            
+              <li><a href="#" title="Web master">Pesquisar</a></li>
+              <li><a href="#" title="SEO">Alterar</a></li>
+              <li><a href="#" title="Design gr&aacute;fico">Excluir</a></li>                    
             </ul>
-	  <li class="border0"><a href="#" title="Contato">Area</a></li>                
-        </ul><%--and menu top--%>
+          </li>
+        </ul>--%><%--and menu top--%>
       </div>
       <div class="sidebar1"><br />
         <ul class="menu_vertical">Professor</ul>
           <ul class="nav">
             <li><a href="#">Cadastrar</a></li>
             <li><a href="#">Editar</a></li>
-            <li><a href="#">Excluir</a></li>
-            <li><a href="#">Listar</a></li>
+            <li><a href="#">Inserir Área</a></li>
           </ul><p>&nbsp;</p>
-          <ul class="menu_vertical">Atividades</ul>
+          <ul class="menu_vertical">Menu Vertical 2</ul>
           <ul class="nav">
-            <li><a href="#">Cadastrar Quetão</a></li>
-            <li><a href="#">Revisar Questão</a></li>
-            <li><a href="#">Gerar Prova</a></li>
+            <li><a href="#">Menu 1</a></li>
+            <li><a href="#">Link two</a></li>
+            <li><a href="#">Menu 2</a></li>
+            <li><a href="#">Link four</a></li>
           </ul><p>&nbsp;</p>
         </div><!-- end .sidebar1 -->
         <div class="content">
-          <p align="right">Seja bem vindo, <font color="red">Fulano </font> | Gostaria de:<a href="logout.html">Alterar Perfil</a> | <a href="logout.html">Sair do sistema</a></p> 
+          <p align="right">Você não está logado! - Gostaria de <a href="logout.html">Cadastrar-se</a>?</p> 
           <ul class="formulario">
-<%--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%--%>            
+<%--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%--%>
             <fieldset >
-              <legend>Cadastro Professor</legend>
-              <form id="form_validacao" action="AtualizarProfessor.do" method="post">
-                <%Professor p = (Professor) request.getAttribute("profatual");%>
-                <div class="rowElem"><label>Nome:</label><input type="text" name="nome" id="nome" value="<%out.print(p.getNome());%>"/></div>
-                <div class="rowElem"><label>Email:</label><input type="text" name="email" id="email" value="<%out.print(p.getEmail());%>"/></div>
-                <div class="rowElem"><label>Senha:</label><input type="text" name="senha" id="senha" value="<%out.print(p.getSenha());%>"/></div>
-                <div class="rowElem"><label>CPF:</label><input type="text" name="cpf" id="cpf" value="<%out.print(p.getCpf());%>"/></div><br /><br />
-                <input type="submit" value="Atualizar" />
-              </form>
-              <a href='prof_inicial.jsp'>Voltar a pagina inicial</a>  
+                <legend>Buscar Aluno para Editar</legend>
+                <form id="form_validacao" action="BuscarAlunoAtualizar.do" method="post">
+                  <div class="rowElem"><label>Nome:</label><input type="text" name="nomea" id="nome_al"/></div></br></br>
+                  <input type="submit" value="Buscar" />
+                </form>
             </fieldset>
 <%--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%--%>            
          </ul><!-- end .content -->

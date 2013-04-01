@@ -1,10 +1,9 @@
 <%-- 
-    Document   : prof_conf_atual
-    Created on : 31/03/2013, 14:20:32
+    Document   : prof_cadastrar
+    Created on : 30/03/2013, 13:10:51
     Author     : jose
 --%>
 
-<%@page import="dominio.Professor"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
@@ -79,16 +78,11 @@
           <ul class="formulario">
 <%--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%--%>            
             <fieldset >
-              <legend>Cadastro Professor</legend>
-              <form id="form_validacao" action="AtualizarProfessor.do" method="post">
-                <%Professor p = (Professor) request.getAttribute("profatual");%>
-                <div class="rowElem"><label>Nome:</label><input type="text" name="nome" id="nome" value="<%out.print(p.getNome());%>"/></div>
-                <div class="rowElem"><label>Email:</label><input type="text" name="email" id="email" value="<%out.print(p.getEmail());%>"/></div>
-                <div class="rowElem"><label>Senha:</label><input type="text" name="senha" id="senha" value="<%out.print(p.getSenha());%>"/></div>
-                <div class="rowElem"><label>CPF:</label><input type="text" name="cpf" id="cpf" value="<%out.print(p.getCpf());%>"/></div><br /><br />
-                <input type="submit" value="Atualizar" />
-              </form>
-              <a href='prof_inicial.jsp'>Voltar a pagina inicial</a>  
+              <legend>Página inicial - Aluno</legend>
+              <a href="aluno_cadastrar.jsp">Cadastrar</a></br>
+              <a href="ListarProfessores.do">Listar Todos</a></br>
+              <a href="aluno_atualizar.jsp">Atualizar</a></br>
+              <a href="prof_buscar_remover.jsp">Remover</a></br>
             </fieldset>
 <%--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%--%>            
          </ul><!-- end .content -->

@@ -4,8 +4,8 @@
  */
 package struts;
 
-import dao.ProfessorDao;
-import dominio.Professor;
+import dao.AlunoDao;
+import dominio.Aluno;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.apache.struts.action.ActionForm;
@@ -19,7 +19,7 @@ import util.HibernateUtil;
  *
  * @author jose
  */
-public class AtualizarProfessor extends org.apache.struts.action.Action {
+public class BuscarAlunoAtualizar extends org.apache.struts.action.Action {
 
     /* forward name="success" path="" */
     private static final String SUCCESS = "success";
@@ -38,28 +38,17 @@ public class AtualizarProfessor extends org.apache.struts.action.Action {
     public ActionForward execute(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
-   
+        
         Session s = HibernateUtil.getSession();
         Transaction t = s.beginTransaction();
         
-        ProfessorDao pDao = new ProfessorDao();
+        AlunoDao ad = new AlunoDao();
+        String nome = request.getParameter("nomea");
+        Aluno a = (Aluno) ad.findByName(nome);
         
+        request.setAttribute("ala", a);
         
-        Professor pro = (Professor) pDao.findByName(request.getParameter("nome"));
-        
-        if(pro!=null){
-            if(pro.getNome().equals(request.getParameter("nome"))){
-                pro.setNome(request.getParameter("nome")); 
-            } if(pro.getEmail().equals(request.getParameter("email"))){
-                pro.setEmail(request.getParameter("email")); 
-            } if(pro.getSenha().equals(request.getParameter("senha"))){
-                pro.setSenha(request.getParameter("senha")); 
-            } if(pro.getCpf().equals(request.getParameter("cpf"))){
-                pro.setCpf(request.getParameter("cpf")); 
-            }
-        }
-        pDao.addOrUpd(pro);
-        request.setAttribute("pro", pro);
         return mapping.findForward(SUCCESS);
+        
     }
 }

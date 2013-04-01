@@ -22,6 +22,24 @@
     </global-forwards>
 
     <action-mappings>
+        <!-- ACTIONS RELATIVAS AO ALUNO-->
+        <action path="/CadastrarAluno" type="struts.CadastrarAluno">
+            <forward name="success" path="/aluno_cadastrado.jsp" />
+            </action>
+        <action path="/BuscarAlunoAtualizar" type="struts.BuscarAlunoAtualizar">
+            <forward name="success" path="/aluno_conf_atual.jsp" />
+            </action>
+        <action path="/AtualizarAluno" type="struts.AtualizarAluno">
+            <forward name="success" path="/aluno_atualizado.jsp" />
+        </action>
+        <action path="/BuscarAlunoDeletar" type="struts.BuscarAlunoDeletar">
+            <forward name="success" path="/confirmar_del_aluno.jsp" />
+        </action>
+        <action path="/DeletarAluno" type="struts.DeletarAluno">
+            <forward name="success" path="/aluno_deletado.jsp" />
+        </action>
+        
+        
         <action path="/ListaInstituicoes" type="struts.ListaInstituicoes">
             <forward name="lista_instituicoes" path="/ListaInstituicoes.jsp" />
         </action>
