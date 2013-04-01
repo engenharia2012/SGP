@@ -80,9 +80,9 @@
             <fieldset >
               <legend>Página inicial - Aluno</legend>
               <a href="aluno_cadastrar.jsp">Cadastrar</a></br>
-              <a href="ListarProfessores.do">Listar Todos</a></br>
+
               <a href="aluno_atualizar.jsp">Atualizar</a></br>
-              <a href="prof_buscar_remover.jsp">Remover</a></br>
+
             </fieldset>
 <%--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%--%>            
          </ul><!-- end .content -->
