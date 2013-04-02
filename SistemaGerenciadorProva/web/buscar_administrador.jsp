@@ -29,49 +29,47 @@
   <body>
     <div class="container">
       <div class="header">
-        <%--menu top--%><%--<ul class="menu">
-            <li><a href="#" title="Inicial">Professor</a>
+  <ul class="menu">
+	<li><a href="#" title="Inicial">Professor</a></li>
+	<li><a href="#" title="Sobre">Alunos</a></li>
+	<li><a href="#" title="Servi&ccedil;os">Administrador</a>
+    	<ul>
+            <li><a href="cadastrar_admin.jsp" title="Cadastrar Instituição">Cadastrar</a></li>            
+            <li><a href="buscar_administrador.jsp" title="Pesquisar">Pesquisar</a></li>
+            <li><a href="atualizar_administrador.jsp" title="Alterar Dados">Alterar</a></li>
+            <li><a href="deletar_administrador.jsp" title="Excluir Instituição">Excluir</a>
+            </li>                    
+        </ul>
+        </li>
+        <li><a href="#" title="Servi&ccedil;os">Instituição</a>
+    
+    	<ul>
+            <li><a href="CadastroInstituicao.jsp" title="Cadastrar Instituição">Cadastrar</a></li>            
+            <li><a href="ListaInstituicoes.do" title="Pesquisar">Pesquisar</a></li>
+            <li><a href="processainstituicao.do" title="Alterar Dados">Alterar</a></li>
+            <li><a href="processainstituicaoexcluir.do" title="Excluir Instituição">Excluir</a>
+            </li>                    
+        </ul>
+        
+        </li>
+	<li><a href="#" title="Porftolio">Provas</a>
+		<ul>
+            <li><a href="#" title="Web design">Cadastrar</a></li>            
+            <li><a href="#" title="Web master">Pesquisar</a></li>
+            <li><a href="#" title="SEO">Alterar</a></li>
+            <li><a href="#" title="Design gr&aacute;fico">Excluir</a>
+            </li>                    
+        </ul>
+	<li class="border0"><a href="#" title="Contato">Area</a>
             <ul>
-              <li><a href="ListarAreaInstituicao.do" title="Web design">Cadastrar</a></li>            
-              <li><a href="#" title="SEO">Edita</a></li>
-              <li><a href="#" title="Design gr&aacute;fico">Excluir</a></li>
-              <li><a href="#" title="Design gr&aacute;fico">Listar</a></li>
-            </ul>
-          </li>
-	  <li><a href="#" title="Sobre">Alunos</a>
-            <ul>
-              <li><a href="#" title="Web design">Cadastrar</a></li>            
-              <li><a href="#" title="SEO">Edita</a></li>
-              <li><a href="#" title="Design gr&aacute;fico">Excluir</a></li>
-              <li><a href="#" title="Design gr&aacute;fico">Listar</a></li>
-            </ul>
-          </li>
-          <li><a href="#" title="Sobre">Administrador</a>
-            <ul>
-              <li><a href="#" title="Web design">Cadastrar</a></li>            
-              <li><a href="#" title="SEO">Edita</a></li>
-              <li><a href="#" title="Design gr&aacute;fico">Excluir</a></li>
-              <li><a href="#" title="Design gr&aacute;fico">Listar</a></li>
-            </ul>
-          </li>
-	  <li><a href="#" title="Servi&ccedil;os">Instituição</a>
-       	    <ul>
-              <li><a href="#" title="Web design">Cadastrar</a></li>            
-              <li><a href="#" title="Web master">Pesquisar</a></li>
-              <li><a href="#" title="SEO">Alterar</a></li>
-              <li><a href="#" title="Design gr&aacute;fico">Excluir</a></li>                    
-            </ul>  
-          </li>
-	  <li><a href="#" title="Porftolio">Provas</a>
-            <ul>
-              <li><a href="#" title="Web design">Cadastrar</a></li>            
-              <li><a href="#" title="Web master">Pesquisar</a></li>
-              <li><a href="#" title="SEO">Alterar</a></li>
-              <li><a href="#" title="Design gr&aacute;fico">Excluir</a></li>                    
-            </ul>
-          </li>
-        </ul>--%><%--and menu top--%>
-      </div>
+            <li><a href="CadastroArea2.jsp" title="Cadastrar Área">Cadastrar</a></li>            
+            <li><a href="Listaarea.do" title="Exibir Áreas Cadastradas">Pesquisar</a></li>
+            <li><a href="processaalterararea.do" title="Alterar Áreas Cadastradas">Alterar</a></li>
+            <li><a href="processaareaexcluir.do" title="Deletar Áreas">Excluir</a>
+            </li>                    
+        </ul>
+
+</div>
       <div class="sidebar1"><br />
         <ul class="menu_vertical">Professor</ul>
           <ul class="nav">
