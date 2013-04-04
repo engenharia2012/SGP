@@ -40,6 +40,7 @@
 	<li><a href="#" title="Inicial">Professor</a></li>
 	<li><a href="#" title="Sobre">Alunos</a></li>
 	<li><a href="#" title="Servi&ccedil;os">Instituição</a>
+            <li><a href="#" title="Servi&ccedil;os">Nivel</a></li>
     
     	<ul>
             <li><a href="CadastroInstituicao.jsp" title="Cadastrar Instituição">Cadastrar</a></li>            
@@ -67,6 +68,18 @@
             </li>                    
         </ul>
 
+            <li class="border0"><a href="#" title="Contato">Nivel</a>
+            <ul>
+            <li><a href="CadastroNivel2.jsp" title="Cadastrar Nivel">Cadastrar</a></li>            
+            <li><a href="ListaNivel.do" title="Exibir Nivel Cadastradas">Pesquisar</a></li>
+            <li><a href="ProcessaAlterarNivel.do" title="Alterar Nivel Cadastradas">Alterar</a></li>
+            <li><a href="ProcessaNivelExcluir.do" title="Deletar Nivel">Excluir</a>
+            </li>                    
+        </ul>
+            
+            
+            
+            
 </div>
   <div class="sidebar1">
   <br />

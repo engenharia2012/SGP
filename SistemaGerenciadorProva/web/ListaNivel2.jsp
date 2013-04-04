@@ -1,11 +1,13 @@
 <%-- 
-    Document   : ListaArea
-    Created on : 25/03/2013, 10:46:13
-    Author     : Sacrario vivo
+    Document   : ListaNivel2
+    Created on : 03/04/2013, 22:54:08
+    Author     : debora
 --%>
 
+
+
 <%@page import="java.util.List"%>
-<%@page import="dominio.Area"%>
+<%@page import="dominio.Nivel"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -123,14 +125,15 @@
     <!-- end .sidebar1 --></div>
   <div class="content">
   <ul class="formulario">
-    <h3>Lista Area</h3>
+    <h3>Lista Nivel</h3>
         <%
-        List<Area> areas = (List) request.getAttribute("todasareas");
-        if(areas.isEmpty())out.println("<h1> Não existe Area cadastradas!</h1>");
+        List<Nivel> nivel = (List) request.getAttribute("todasnivel");
+        if(nivel.isEmpty())out.println("<h1> Não existe Nivel cadastradas!</h1>");
                else{
-                     for (Area cont : areas) {
-                        out.println("<br/>Nome: " + cont.getNome());
-                       
+                     for (Nivel cont : nivel) {
+                        out.println("<br/>Facil: " + cont.getFacil());
+                    
+                       out.println("<br/>Dificil: " + cont.getDificil());
                         out.println("<br/><br/>");
                     }
                }
