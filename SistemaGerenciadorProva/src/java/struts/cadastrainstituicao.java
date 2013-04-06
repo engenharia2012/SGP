@@ -6,6 +6,7 @@ package struts;
 
 import dao.InstituicaoDao;
 import dominio.Instituicao;
+import dominio.SendMail;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.apache.struts.action.ActionForm;
@@ -59,6 +60,10 @@ public class cadastrainstituicao extends org.apache.struts.action.Action {
             }
         }
         else{
+            //Enviar Email de notificação
+            SendMail notificacao = new SendMail();
+            notificacao.sendMail("Origem", "Destino", "Assunto", "Mensagem");
+            
             t = s.beginTransaction();
             instdao.addOrUpd(inst);
             request.setAttribute("nome", inst.getNome_fantasia());
