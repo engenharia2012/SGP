@@ -35,5 +35,7 @@
         <mapping class="dominio.Professor"/>
         <mapping class="dominio.Aluno"/>
         <mapping class="dominio.Administrador"/>
+        <mapping class="dominio.Questao"/>
+        <mapping class="dominio.Notificacao"/>
   </session-factory>
 </hibernate-configuration>
