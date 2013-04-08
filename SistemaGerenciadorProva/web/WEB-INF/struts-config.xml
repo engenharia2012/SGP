@@ -23,6 +23,52 @@
     </global-forwards>
 
     <action-mappings>
+        
+        <!-- LOGIN -->
+        <action path="/Login" type="struts.Login">
+            <forward name="administrador" path="/cadastrar_admin.jsp" />
+            <forward name="professor" path="/resultado_login.jsp" />
+            <forward name="aluno" path="/resultado_login.jsp" />
+            <forward name="success" path="/resultado_login.jsp" />
+        </action>
+        
+        <!-- ACTIONS RELATIVAS AO ALUNO-->
+        <action path="/CadastrarAluno" type="struts.CadastrarAluno">
+            <forward name="success" path="/aluno_cadastrado.jsp" />
+        </action>
+        <action path="/BuscarAlunoAtualizar" type="struts.BuscarAlunoAtualizar">
+            <forward name="success" path="/confirmar_atualizacao_al.jsp" />
+        </action>
+        <action path="/AtualizarAluno" type="struts.AtualizarAluno">
+            <forward name="success" path="/aluno_atualizado.jsp" />
+        </action>
+        <action path="/BuscarAlunoDeletar" type="struts.BuscarAlunoDeletar">
+            <forward name="success" path="/confirmar_del_aluno.jsp" />
+        </action>
+        <action path="/DeletarAluno" type="struts.DeletarAluno">
+            <forward name="success" path="/aluno_deletado.jsp" />
+        </action>
+        
+        <!-- ACTIONS ADMINISTRADOR -->
+        <action path="/CadastrarAdministrador" type="struts.CadastrarAdministrador">
+            <forward name="success" path="/administrador_cadastrado.jsp" />
+        </action>
+        <action path="/BuscarAdministradorAtualizar" type="struts.BuscarAdministradorAtualizar">
+            <forward name="success" path="/confirmar_atualizacao_admin.jsp" />
+        </action>
+        <action path="/AtualizarAdministrador" type="struts.AtualizarAdministrador">
+            <forward name="success" path="/administrador_atualizado.jsp" />
+        </action>
+        <action path="/DeletarAdministrador" type="struts.DeletarAdministrador">
+            <forward name="success" path="/confirmar_delecao_admin.jsp" />
+        </action>
+        <action path="/DeletarAdministradorConfirmado" type="struts.DeletarAdministradorConfirmado">
+            <forward name="success" path="/administrador_deletado.jsp" />
+        </action>
+        <action path="/BuscarAdministrador" type="struts.BuscarAdministrador">
+            <forward name="success" path="/administrador_buscado.jsp" />
+        </action>
+        
         <action path="/ListaInstituicoes" type="struts.ListaInstituicoes">
             <forward name="lista_instituicoes" path="/ListaInstituicoes.jsp" />
         </action>
