@@ -85,6 +85,9 @@
         <action path="/RemoverProfessor" type="struts.RemoverProfessor">
             <forward name="success" path="/prof_removido.jsp"/>
         </action>
+        <action path="/NotificarQuestao" type="struts.NotificarQuestao">
+            <forward name="success" path="/questao_notificada.jsp"/>
+        </action>
         
         <action path="/Listararea" type="struts.Listararea"/>
         <action path="/alteraarea" type="struts.alteraarea"/>    

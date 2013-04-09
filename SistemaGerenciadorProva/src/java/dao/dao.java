@@ -69,9 +69,5 @@ public class dao <T> {
         query = this.session.createQuery(hql);
         query.setParameter("pbusca", "%" + busca + "%");
         return query.list();
-    }
-
-
-
-    
+    } 
 }

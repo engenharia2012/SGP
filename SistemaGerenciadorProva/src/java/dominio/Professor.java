@@ -4,11 +4,12 @@
  */
 package dominio;
 
-import javax.persistence.CascadeType;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Inheritance;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 /**
  *
@@ -23,8 +24,11 @@ public class Professor extends Usuario{
     @ManyToOne
     private Instituicao inst;
     
-    //@ManyToOne
+    @ManyToOne
     private Area area;
+    
+    @OneToMany
+    private List<Questao> questoes;
     
     /**
      * @return the cpf
@@ -66,5 +70,12 @@ public class Professor extends Usuario{
      */
     public void setArea(Area area) {
         this.area = area;
+    }
+
+    /**
+     * @return the questoes
+     */
+    public List<Questao> getQuestoes() {
+        return questoes;
     }
 }
