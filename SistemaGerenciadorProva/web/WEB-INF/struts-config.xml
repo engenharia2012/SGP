@@ -23,22 +23,13 @@
     </global-forwards>
 
     <action-mappings>
-        
-        <!-- LOGIN -->
-        <action path="/Login" type="struts.Login">
-            <forward name="administrador" path="/cadastrar_admin.jsp" />
-            <forward name="professor" path="/resultado_login.jsp" />
-            <forward name="aluno" path="/resultado_login.jsp" />
-            <forward name="success" path="/resultado_login.jsp" />
-        </action>
-        
         <!-- ACTIONS RELATIVAS AO ALUNO-->
         <action path="/CadastrarAluno" type="struts.CadastrarAluno">
             <forward name="success" path="/aluno_cadastrado.jsp" />
-        </action>
+            </action>
         <action path="/BuscarAlunoAtualizar" type="struts.BuscarAlunoAtualizar">
-            <forward name="success" path="/confirmar_atualizacao_al.jsp" />
-        </action>
+            <forward name="success" path="/aluno_conf_atual.jsp" />
+            </action>
         <action path="/AtualizarAluno" type="struts.AtualizarAluno">
             <forward name="success" path="/aluno_atualizado.jsp" />
         </action>
@@ -49,25 +40,6 @@
             <forward name="success" path="/aluno_deletado.jsp" />
         </action>
         
-        <!-- ACTIONS ADMINISTRADOR -->
-        <action path="/CadastrarAdministrador" type="struts.CadastrarAdministrador">
-            <forward name="success" path="/administrador_cadastrado.jsp" />
-        </action>
-        <action path="/BuscarAdministradorAtualizar" type="struts.BuscarAdministradorAtualizar">
-            <forward name="success" path="/confirmar_atualizacao_admin.jsp" />
-        </action>
-        <action path="/AtualizarAdministrador" type="struts.AtualizarAdministrador">
-            <forward name="success" path="/administrador_atualizado.jsp" />
-        </action>
-        <action path="/DeletarAdministrador" type="struts.DeletarAdministrador">
-            <forward name="success" path="/confirmar_delecao_admin.jsp" />
-        </action>
-        <action path="/DeletarAdministradorConfirmado" type="struts.DeletarAdministradorConfirmado">
-            <forward name="success" path="/administrador_deletado.jsp" />
-        </action>
-        <action path="/BuscarAdministrador" type="struts.BuscarAdministrador">
-            <forward name="success" path="/administrador_buscado.jsp" />
-        </action>
         
         <action path="/ListaInstituicoes" type="struts.ListaInstituicoes">
             <forward name="lista_instituicoes" path="/ListaInstituicoes.jsp" />
@@ -93,6 +65,31 @@
         <action path="/processaarea" type="struts.Listaarea">
             <forward name="listaarea" path="/ListaArea.jsp" />
         </action>
+        <action path="/ListarAreaInstituicao" type="struts.ListarAreaInstituicao">
+            <forward name="success" path="/prof_cadastrar.jsp"/>
+        </action>
+        <action path="/CadastrarProfessor" type="struts.CadastrarProfessor">
+            <forward name="success" path="/prof_cadastrado.jsp"/>
+        </action>
+        <action path="/ListarProfessores" type="struts.ListarProfessores">
+            <forward name="success" path="/prof_lista.jsp"/>
+        </action>
+        <action path="/BuscarProfessorAtualizar" type="struts.BuscarProfessorAtualizar">
+            <forward name="success" path="/prof_conf_atual.jsp"/>
+        </action>
+        <action path="/AtualizarProfessor" type="struts.AtualizarProfessor">
+            <forward name="success" path="/prof_atualizado.jsp"/>
+        </action>
+        <action path="/BuscarProfessorDeletar" type="struts.BuscarProfessorDeletar">
+            <forward name="success" path="/prof_conf_remocao.jsp"/>
+        </action>
+        <action path="/RemoverProfessor" type="struts.RemoverProfessor">
+            <forward name="success" path="/prof_removido.jsp"/>
+        </action>
+        <action path="/NotificarQuestao" type="struts.NotificarQuestao">
+            <forward name="success" path="/questao_notificada.jsp"/>
+        </action>
+        
         <action path="/Listararea" type="struts.Listararea"/>
         <action path="/alteraarea" type="struts.alteraarea"/>    
         <action path="/excluiarea" type="struts.excluiarea"/>
