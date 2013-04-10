@@ -2,10 +2,6 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package struts;
 
 import dao.NivelDao;
@@ -23,30 +19,50 @@ import org.hibernate.Transaction;
  *
  * @author debora
  */
-
-
 public class CadastrarNivel extends org.apache.struts.action.Action {
 
-    
-    private static final String SUCCESSO = "sucesso_cadastrar";
-    private Object niveldao;
+    /*
+     * forward name="success" path=""
+     */
+    private static final String SUCCESS = "success";
 
-    
+    /**
+     * This is the action called from the Struts framework.
+     *
+     * @param mapping The ActionMapping used to select this instance.
+     * @param form The optional ActionForm bean for this request.
+     * @param request The HTTP Request we are processing.
+     * @param response The HTTP Response we are processing.
+     * @throws java.lang.Exception
+     * @return
+     */
     @Override
     public ActionForward execute(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
-		Nivel nivel = new Nivel();
-        NivelDao niveldao = new NivelDao();
-        nivel.setTipoNivel(request.getParameter("id_nivel"));
-       
+        
         Session s = util.HibernateUtil.getSession();
         Transaction t = s.beginTransaction();
-        niveldao.addOrUpd(nivel);
-		
-        request.setAttribute("TipoNivel", nivel.getTipoNivel());
         
-        return mapping.findForward(SUCCESSO);
+        NivelDao nivDao = new NivelDao();
+        Nivel niv;
+        
+        SQLQuery sqlQuery = s.createSQLQuery("SELECT * FROM nivel WHERE nome=?");
+        sqlQuery.setString(0, request.getParameter("TipoNivel"));
+        sqlQuery.addEntity(Nivel.class);
+        niv = (Nivel) sqlQuery.uniqueResult();
+        
+        if(niv != null){
+            request.setAttribute("niv", niv);
+        } else{
+            niv = new Nivel();
+            niv.setTipoNivel(request.getParameter("TipoNivel"));
+           
+        
+            nivDao.addOrUpd(niv);
+            request.setAttribute("niv", niv);
+        }
+        
+        return mapping.findForward(SUCCESS);
     }
 }
-

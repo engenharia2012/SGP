@@ -80,6 +80,7 @@
         </action>
         <action path="/processainstituicaoexcluir" type="struts.processainstituicaoexcluir">
             <forward name="listainstituicoesexcluir" path="/ListaInstituicoesExcluir.jsp" />
+            
         </action>
         <action path="/processaareaexcluir" type="struts.processaareaexcluir">
             <forward name="listaareaexcluir" path="/ListaAreaExcluir.jsp" />

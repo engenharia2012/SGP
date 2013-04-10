@@ -114,7 +114,7 @@
   <ul class="formulario">
     <fieldset>
 	   <legend>Cadastro Nivel</legend>
-	    <FORM name="Cadastro_Nivel" action="CadastraNivel.do" enctype="multipart/formdata" class="validate" method="post">
+	    <FORM name="Cadastro_Nivel" action="CadastrarNivel.do" enctype="multipart/formdata" class="validate" method="post">
                 <p>
                 <label>Nivel:</label>
                 <input maxlength="80" size="60" name="textTipoNivel" id="nome" class="required">

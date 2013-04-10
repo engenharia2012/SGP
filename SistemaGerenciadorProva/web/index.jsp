@@ -39,10 +39,7 @@
   <ul class="menu">
 	<li><a href="#" title="Inicial">Professor</a></li>
 	<li><a href="#" title="Sobre">Alunos</a></li>
-<<<<<<< HEAD
-	<li><a href="#" title="Servi&ccedil;os">Instituição</a>
-            <li><a href="#" title="Servi&ccedil;os">Nivel</a></li>
-=======
+        
 	<li><a href="#" title="Servi&ccedil;os">Administrador</a>
     	<ul>
             <li><a href="cadastrar_admin.jsp" title="Cadastrar Instituição">Cadastrar</a></li>            
@@ -53,8 +50,6 @@
         </ul>
         </li>
         <li><a href="#" title="Servi&ccedil;os">Instituição</a>
->>>>>>> branch 'Administrador' of github.com:engenharia2012/SGP.git
-    
     	<ul>
             <li><a href="CadastroInstituicao.jsp" title="Cadastrar Instituição">Cadastrar</a></li>            
             <li><a href="ListaInstituicoes.do" title="Pesquisar">Pesquisar</a></li>
@@ -72,15 +67,6 @@
             <li><a href="#" title="Design gr&aacute;fico">Excluir</a>
             </li>                    
         </ul>
-	<li class="border0"><a href="#" title="Contato">Area</a>
-            <ul>
-            <li><a href="CadastroArea2.jsp" title="Cadastrar Área">Cadastrar</a></li>            
-            <li><a href="Listaarea.do" title="Exibir Áreas Cadastradas">Pesquisar</a></li>
-            <li><a href="processaalterararea.do" title="Alterar Áreas Cadastradas">Alterar</a></li>
-            <li><a href="processaareaexcluir.do" title="Deletar Áreas">Excluir</a>
-            </li>                    
-        </ul>
-
             <li class="border0"><a href="#" title="Contato">Nivel</a>
             <ul>
             <li><a href="CadastroNivel2.jsp" title="Cadastrar Nivel">Cadastrar</a></li>            
@@ -89,10 +75,16 @@
             <li><a href="ProcessaNivelExcluir.do" title="Deletar Nivel">Excluir</a>
             </li>                    
         </ul>
+	<li class="border0"><a href="#" title="Contato">Area</a>
+            <ul>
+            <li><a href="CadastroArea2.jsp" title="Cadastrar Área">Cadastrar</a></li>            
+            <li><a href="Listaarea.do" title="Exibir Áreas Cadastradas">Pesquisar</a></li>
+            <li><a href="processaalterararea.do" title="Alterar Áreas Cadastradas">Alterar</a></li>
+            <li><a href="processaareaexcluir.do" title="Deletar Áreas">Excluir</a>
+            </li>                    
+        
             
-            
-            
-            
+                  
 </div>
   <div class="sidebar1">
   <br />
@@ -150,7 +142,15 @@
                     </select>
                     <span>Selecione um item</span>
                     
-                </p>    
+                </p>  
+    <p>  
+                    <label>Nivel</label>
+                    <select name="combo" id="combo" class="required">
+                        <option value="">Selecione um item na lista</option>
+                        <option value="0">Nivel AA</option>
+                        <option value="1">Nivel BB</option>
+                    </select>
+                    <span>Selecione um item</span>
                  <p>  
                     <label>Área</label>
                     <select name="combo" id="combo" class="required">

@@ -82,14 +82,12 @@
             <li><a href="#" title="SEO">Alterar</a></li>
             <li><a href="#" title="Design gr&aacute;fico">Excluir</a>
             </li>                    
-        </ul>
-            <li><a href="#" title="Servi&ccedil;os">Nivel</a>
-    
-    	<ul>
-            <li><a href="#" title="Web design">Cadastrar</a></li>            
-            <li><a href="#" title="Web master">Pesquisar</a></li>
-            <li><a href="#" title="SEO">Alterar</a></li>
-            <li><a href="#" title="Design gr&aacute;fico">Excluir</a>
+       <li class="border0"><a href="#" title="Contato">Nivel</a>
+            <ul>
+            <li><a href="CadastroNivel2.jsp" title="Cadastrar Nivel">Cadastrar</a></li>            
+            <li><a href="ListaNivel2.jsp" title="Exibir Áreas Cadastradas">Pesquisar</a></li>
+            <li><a href="#" title="Alterar Nivel Cadastradas">Alterar</a></li>
+            <li><a href="#" title="Deletar Nivel">Excluir</a>
             </li>                    
         </ul>
             
@@ -127,13 +125,13 @@
   <ul class="formulario">
     <h3>Lista Nivel</h3>
         <%
-        List<Nivel> nivel = (List) request.getAttribute("todasnivel");
+        List<Nivel> nivel = (List) request.getAttribute("todosnivel");
         if(nivel.isEmpty())out.println("<h1> Não existe Nivel cadastradas!</h1>");
                else{
                      for (Nivel cont : nivel) {
-                        out.println("<br/>Facil: " + cont.getFacil());
+                        out.println("<br/>TipoNivel: " + cont.getTipoNivel());
                     
-                       out.println("<br/>Dificil: " + cont.getDificil());
+                  
                         out.println("<br/><br/>");
                     }
                }

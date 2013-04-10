@@ -20,7 +20,7 @@
                     <%
                                 List<Nivel> nivel = (List) request.getAttribute("ListaNivelAlterar");
                                 for (Nivel cont0 : nivel) {
-                                    out.println("<br/><option value= " + cont0.getFacil() + ">" + cont0.getDificil() + "</option>");
+                                    out.println("<br/><option value= " + cont0.getTipoNivel() + ">" + cont0.getTipoNivel() + "</option>");
                                 }
                     %>
             </select>

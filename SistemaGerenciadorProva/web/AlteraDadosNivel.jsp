@@ -16,12 +16,9 @@
     </head>
     <body>
         <h3>Grau do Nivel</h3>
-        <% Nivel niv = (Nivel) request.getAttribute("alteranivel"); %>
-        <FORM name="Altera_Nivel" action="alteranivel.do" enctype="multipart/formdata" method="post">
-            <p>Facil</p><p><input maxlength="80" size="60" name="textFacil" value="<% out.println(niv.Facil()); %>"></p>
-            <p>Medio</p><p><input maxlength="80" size="60" name="textMedio" value="<% out.println(niv.Medio()); %>"></p>
-            <p>Dificil</p><p><input maxlength="80" size="60" name="textDificil" value="<% out.println(niv.Dificil()); %>"></p>
-            
+        <% Nivel nivel = (Nivel) request.getAttribute("AlterraNivel"); %>
+        <FORM name="Altera_Nivel" action="AlterarNivel.do" enctype="multipart/formdata" method="post">
+            <p>TipoNivel</p><p><input maxlength="80" size="60" name="textTipoNivel" value="<% out.println(nivel.getTipoNivel()); %>"></p>            
             <p><input type="submit" value="Enviar"></p>
         </FORM>
     <a href="index.jsp">Voltar</a>
