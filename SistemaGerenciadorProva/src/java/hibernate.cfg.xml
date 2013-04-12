@@ -30,10 +30,12 @@
         <property name="hibernate.c3p0.acquire_increment">2</property>
         
         <mapping class="dominio.Instituicao"/>
-        <mapping class="dominio.Usuario" />
-        <mapping class="dominio.Professor" />
-        <mapping class="dominio.Aluno" />
-        <mapping class="dominio.Administrador" />
-        <mapping class="dominio.Area" />
+        <mapping class="dominio.Area"/>
+        <mapping class="dominio.Usuario"/>
+        <mapping class="dominio.Professor"/>
+        <mapping class="dominio.Aluno"/>
+        <mapping class="dominio.Administrador"/>
+        <mapping class="dominio.Questao"/>
+        <mapping class="dominio.Notificacao"/>
   </session-factory>
 </hibernate-configuration>

@@ -4,7 +4,7 @@
  */
 package dominio;
 
-import javax.persistence.Entity;
+import org.hibernate.annotations.Entity;
 
 /**
  *
