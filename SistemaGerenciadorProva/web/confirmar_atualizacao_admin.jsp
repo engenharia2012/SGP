@@ -104,7 +104,7 @@
                         <input type="hidden" name="admin_atual" value="<%out.print(admin.getAdmin_atual());%>"/></div></br>
                 
                         <%request.setAttribute("admin", admin);%>
-                        </br><input type="submit" value="Atualizar" />
+                        <input type="submit" value="Atualizar" />
                 <% } else { %>
                         <h2>Administrador não cadastrado!</h2>
                 <% } %>

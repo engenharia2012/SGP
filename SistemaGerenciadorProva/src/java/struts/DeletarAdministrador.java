@@ -43,8 +43,8 @@ public class DeletarAdministrador extends org.apache.struts.action.Action {
         Session s = util.HibernateUtil.getSession();
         Transaction t = s.beginTransaction();
   
-        SQLQuery sqlQuery = s.createSQLQuery("SELECT * FROM administrador WHERE nome=?");
-        sqlQuery.setString(0, request.getParameter("nome"));
+        SQLQuery sqlQuery = s.createSQLQuery("SELECT * FROM administrador WHERE email=?");
+        sqlQuery.setString(0, request.getParameter("email"));
         sqlQuery.addEntity(Administrador.class);
         Administrador admin = (Administrador) sqlQuery.uniqueResult();
         

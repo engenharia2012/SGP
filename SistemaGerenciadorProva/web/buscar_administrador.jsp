@@ -92,7 +92,7 @@
             <fieldset >
                 <legend>Buscar Administrador</legend>
                 <form id="form_validacao" action="BuscarAdministrador.do" method="post">
-                  <div class="rowElem"><label>Nome:</label><input type="text" name="nome" id="nome_al"/></div>
+                  <div class="rowElem"><label>Email:</label><input type="text" name="email" id="nome_al"/></div>
                   </br></br><input type="submit" value="Buscar" />
                 </form>
             </fieldset>

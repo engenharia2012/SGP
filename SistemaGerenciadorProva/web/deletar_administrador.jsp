@@ -92,7 +92,7 @@
             <fieldset >
                 <legend>Excluir Administrador</legend>
                 <form id="form_validacao" action="DeletarAdministrador.do" method="post">
-                  <div class="rowElem"><label>Nome:</label><input type="text" name="nome" id="nome_al"/></div>
+                  <div class="rowElem"><label>Email:</label><input type="text" name="email" id="nome_al"/></div>
                   </br></br><input type="submit" value="Buscar" />
                 </form>
             </fieldset>
