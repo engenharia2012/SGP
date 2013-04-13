@@ -4,6 +4,7 @@
  */
 package struts;
 
+import dominio.AdminAux;
 import dominio.Administrador;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -18,11 +19,9 @@ import org.hibernate.Transaction;
  *
  * @author Arnaldo Junior
  */
-public class BuscarAdministradorAtualizar extends org.apache.struts.action.Action {
+public class EscolherAdmin extends org.apache.struts.action.Action {
 
-    /*
-     * forward name="success" path=""
-     */
+    /* forward name="success" path="" */
     private static final String SUCCESS = "success";
 
     /**
@@ -42,19 +41,24 @@ public class BuscarAdministradorAtualizar extends org.apache.struts.action.Actio
         
         Session s = util.HibernateUtil.getSession();
         Transaction t = s.beginTransaction();
+        AdminAux adminAux = new AdminAux();
   
         SQLQuery sqlQuery = s.createSQLQuery("SELECT * FROM administrador WHERE email=?");
         sqlQuery.setString(0, request.getParameter("email"));
         sqlQuery.addEntity(Administrador.class);
         Administrador admin = (Administrador) sqlQuery.uniqueResult();
         
-        if(admin != null){
-            request.setAttribute("admin", admin);
+        if (admin != null){   
+            adminAux.setAdmin(admin);
+            adminAux.setEmail(request.getParameter("email_admin"));
+
         } else{
             admin = new Administrador();
             admin.setNome(null);
-            request.setAttribute("admin", admin);
+            adminAux.setAdmin(admin);
+            
         }
+        request.setAttribute("adminAux", adminAux);
         
         return mapping.findForward(SUCCESS);
     }

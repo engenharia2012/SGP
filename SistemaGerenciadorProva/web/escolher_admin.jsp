@@ -1,9 +1,10 @@
 <%-- 
     Document   : atualizar_administrador
     Created on : 21/03/2013, 06:56:51
-    Author     : Arnaldo Coelho
+    Author     : Arnaldo Junior
 --%>
 
+<%@page import="dominio.Administrador"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
@@ -37,8 +38,8 @@
             <li><a href="cadastrar_admin.jsp" title="Cadastrar Instituição">Cadastrar</a></li>            
             <li><a href="buscar_administrador.jsp" title="Pesquisar">Pesquisar</a></li>
             <li><a href="atualizar_administrador.jsp" title="Alterar Dados">Alterar</a></li>
-            <li><a href="deletar_administrador.jsp" title="Excluir Instituição">Excluir</a>
-            </li>                    
+            <li><a href="deletar_administrador.jsp" title="Excluir Instituição">Excluir</a></li>
+            <li><a href="escolher_admin.jsp" title="Excluir Instituição">Escolher Administrador</a></li>
         </ul>
         </li>
         <li><a href="#" title="Servi&ccedil;os">Instituição</a>
@@ -89,10 +90,15 @@
           <p align="right">Você não está logado! - Gostaria de <a href="logout.html">Cadastrar-se</a>?</p> 
           <ul class="formulario">
 <%--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%--%>
-            <fieldset>
-                <legend>Atualizar Administrador</legend>
-                <form id="form_validacao" action="BuscarAdministradorAtualizar.do" method="post">
+            <% //Recebe o administrador
+            Administrador admin = (Administrador) session.getAttribute("admin");
+            %>
+
+            <fieldset >
+                <legend>Escolher Administrador</legend>
+                <form id="form_validacao" action="EscolherAdmin.do" method="post">
                   <div class="rowElem"><label>Email:</label><input type="text" name="email" id="nome_al"/></div>
+                  <input type="hidden" name="email_admin" value="<% out.print(admin.getEmail()); %>" />
                   </br></br><input type="submit" value="Buscar" />
                 </form>
             </fieldset>

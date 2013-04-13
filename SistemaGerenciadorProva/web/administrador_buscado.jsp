@@ -38,8 +38,8 @@
             <li><a href="cadastrar_admin.jsp" title="Cadastrar Instituição">Cadastrar</a></li>            
             <li><a href="buscar_administrador.jsp" title="Pesquisar">Pesquisar</a></li>
             <li><a href="atualizar_administrador.jsp" title="Alterar Dados">Alterar</a></li>
-            <li><a href="deletar_administrador.jsp" title="Excluir Instituição">Excluir</a>
-            </li>                    
+            <li><a href="deletar_administrador.jsp" title="Excluir Instituição">Excluir</a></li>
+            <li><a href="escolher_admin.jsp" title="Excluir Instituição">Escolher Administrador</a></li>
         </ul>
         </li>
         <li><a href="#" title="Servi&ccedil;os">Instituição</a>
@@ -101,9 +101,11 @@
                         <div class="rowElem"><label>Nome:</label><input type="text" name="nome" value="<%out.print(admin.getNome());%>"/></div>
                         <div class="rowElem"><label>Email:</label><input type="text" name="email" value="<%out.print(admin.getEmail());%>"/></div>
                         <div class="rowElem"><label>Senha:</label><input type="text" name="senha" value="<%out.print(admin.getSenha());%>"/></div></br></br>
+                        
                 <%  } else { %>
                         <h2> Administrador não cadastrado! </h2>
                     <% } %>
+                    <a href="buscar_administrador.jsp">Buscar outro administrador.</a>
               </form>
             </fieldset>
 <%--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%--%>            

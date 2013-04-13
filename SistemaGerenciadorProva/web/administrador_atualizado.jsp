@@ -37,8 +37,8 @@
             <li><a href="cadastrar_admin.jsp" title="Cadastrar Instituição">Cadastrar</a></li>            
             <li><a href="buscar_administrador.jsp" title="Pesquisar">Pesquisar</a></li>
             <li><a href="atualizar_administrador.jsp" title="Alterar Dados">Alterar</a></li>
-            <li><a href="deletar_administrador.jsp" title="Excluir Instituição">Excluir</a>
-            </li>                    
+            <li><a href="deletar_administrador.jsp" title="Excluir Instituição">Excluir</a></li>
+            <li><a href="escolher_admin.jsp" title="Excluir Instituição">Escolher Administrador</a></li>
         </ul>
         </li>
         <li><a href="#" title="Servi&ccedil;os">Instituição</a>
@@ -92,7 +92,7 @@
             <fieldset >
                 <legend>Administrador Atualizado</legend>
                 </br><h2>Dados do administrador atualizados!</h2>
-                </form>
+                <a href="atualizar_administrador.jsp">Atualizar novamente.</a>
             </fieldset>
 <%--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%--%>            
          </ul><!-- end .content -->

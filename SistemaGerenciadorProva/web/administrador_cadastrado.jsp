@@ -30,47 +30,7 @@
   <body>
     <div class="container">
       <div class="header">
-  <ul class="menu">
-	<li><a href="#" title="Inicial">Professor</a></li>
-	<li><a href="#" title="Sobre">Alunos</a></li>
-	<li><a href="#" title="Servi&ccedil;os">Administrador</a>
-    	<ul>
-            <li><a href="cadastrar_admin.jsp" title="Cadastrar Instituição">Cadastrar</a></li>            
-            <li><a href="buscar_administrador.jsp" title="Pesquisar">Pesquisar</a></li>
-            <li><a href="atualizar_administrador.jsp" title="Alterar Dados">Alterar</a></li>
-            <li><a href="deletar_administrador.jsp" title="Excluir Instituição">Excluir</a>
-            </li>                    
-        </ul>
-        </li>
-        <li><a href="#" title="Servi&ccedil;os">Instituição</a>
-    
-    	<ul>
-            <li><a href="CadastroInstituicao.jsp" title="Cadastrar Instituição">Cadastrar</a></li>            
-            <li><a href="ListaInstituicoes.do" title="Pesquisar">Pesquisar</a></li>
-            <li><a href="processainstituicao.do" title="Alterar Dados">Alterar</a></li>
-            <li><a href="processainstituicaoexcluir.do" title="Excluir Instituição">Excluir</a>
-            </li>                    
-        </ul>
-        
-        </li>
-	<li><a href="#" title="Porftolio">Provas</a>
-		<ul>
-            <li><a href="#" title="Web design">Cadastrar</a></li>            
-            <li><a href="#" title="Web master">Pesquisar</a></li>
-            <li><a href="#" title="SEO">Alterar</a></li>
-            <li><a href="#" title="Design gr&aacute;fico">Excluir</a>
-            </li>                    
-        </ul>
-	<li class="border0"><a href="#" title="Contato">Area</a>
-            <ul>
-            <li><a href="CadastroArea2.jsp" title="Cadastrar Área">Cadastrar</a></li>            
-            <li><a href="Listaarea.do" title="Exibir Áreas Cadastradas">Pesquisar</a></li>
-            <li><a href="processaalterararea.do" title="Alterar Áreas Cadastradas">Alterar</a></li>
-            <li><a href="processaareaexcluir.do" title="Deletar Áreas">Excluir</a>
-            </li>                    
-        </ul>
-
-</div>
+      </div>
       <div class="sidebar1"><br />
         <ul class="menu_vertical">Professor</ul>
           <ul class="nav">
@@ -93,7 +53,9 @@
             <fieldset >
               <legend>Cadastrar Administrador</legend>
               <form id="form_validacao" action="" method="post">
-                </br><h2>Cadastrado com sucesso!</h2>
+                </br><h2>Novo administrador cadastrado com sucesso!</h2>
+                <h2>Você não é mais administrador do sistema!</h2></br>
+                <a href="login.jsp"> Retornar à tela de login. </a>
               </form>
             </fieldset>
 <%--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%--%>            

@@ -44,24 +44,49 @@ public class CadastrarAdministrador extends org.apache.struts.action.Action {
         Session s = util.HibernateUtil.getSession();
         Transaction t = s.beginTransaction();
         
+        System.out.println("-------" + request.getParameter("nome"));
+        System.out.println("-------" + request.getParameter("email"));
+        System.out.println("-------" + request.getParameter("senha"));
+        System.out.println("-------" + request.getParameter("email_admin"));
+        
         AdministradorDao adminDao = new AdministradorDao();
         Administrador admin;
+        Administrador admin_novo;
         
         SQLQuery sqlQuery = s.createSQLQuery("SELECT * FROM administrador WHERE nome=?");
         sqlQuery.setString(0, request.getParameter("nome"));
         sqlQuery.addEntity(Administrador.class);
-        admin = (Administrador) sqlQuery.uniqueResult();
+        admin_novo = (Administrador) sqlQuery.uniqueResult();
         
-        if(admin != null){
-            request.setAttribute("admin", admin);
+        if(admin_novo != null){
+            request.setAttribute("admin", admin_novo);
         } else{
-            admin = new Administrador();
-            admin.setNome(request.getParameter("nome"));
-            admin.setEmail(request.getParameter("email"));
-            admin.setSenha(request.getParameter("senha"));
+            admin_novo = new Administrador();
+            admin_novo.setNome(request.getParameter("nome"));
+            admin_novo.setEmail(request.getParameter("email"));
+            admin_novo.setSenha(request.getParameter("senha"));
+            admin_novo.setAdmin_atual(true);
         
-            adminDao.addOrUpd(admin);
-            request.setAttribute("admin", admin);
+            adminDao.addOrUpd(admin_novo); //Cadastra o novo administrador;
+            
+            //DESMARCAR ADMINISTRADOR ATUAL
+            
+            Session s2 = util.HibernateUtil.getSession();
+            Transaction t2 = s2.beginTransaction();
+            
+            SQLQuery sqlQuery2 = s2.createSQLQuery("SELECT * FROM administrador WHERE email=?");
+            sqlQuery2.setString(0, request.getParameter("email_admin"));
+            sqlQuery2.addEntity(Administrador.class);
+            admin = (Administrador) sqlQuery2.uniqueResult();
+            
+            System.out.println("--------" + admin.getEmail());
+            
+            admin.setAdmin_atual(false); //Retira a função de administrador;
+            
+            AdministradorDao adminDao2 = new AdministradorDao();
+            adminDao2.addOrUpd(admin);
+            
+            request.setAttribute("admin", admin_novo); //Envia o novo administrador cadastrado;
         }
         
         return mapping.findForward(SUCCESS);

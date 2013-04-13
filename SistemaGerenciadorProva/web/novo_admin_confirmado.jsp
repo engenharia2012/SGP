@@ -1,9 +1,10 @@
 <%-- 
-    Document   : atualizar_administrador
-    Created on : 21/03/2013, 06:56:51
-    Author     : Arnaldo Coelho
+    Document   : administrador_atualizado
+    Created on : 21/03/2013, 09:01:22
+    Author     : Arnaldo Junior
 --%>
 
+<%@page import="dominio.Administrador"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
@@ -29,47 +30,7 @@
   <body>
     <div class="container">
       <div class="header">
-  <ul class="menu">
-	<li><a href="#" title="Inicial">Professor</a></li>
-	<li><a href="#" title="Sobre">Alunos</a></li>
-	<li><a href="#" title="Servi&ccedil;os">Administrador</a>
-    	<ul>
-            <li><a href="cadastrar_admin.jsp" title="Cadastrar Instituição">Cadastrar</a></li>            
-            <li><a href="buscar_administrador.jsp" title="Pesquisar">Pesquisar</a></li>
-            <li><a href="atualizar_administrador.jsp" title="Alterar Dados">Alterar</a></li>
-            <li><a href="deletar_administrador.jsp" title="Excluir Instituição">Excluir</a>
-            </li>                    
-        </ul>
-        </li>
-        <li><a href="#" title="Servi&ccedil;os">Instituição</a>
-    
-    	<ul>
-            <li><a href="CadastroInstituicao.jsp" title="Cadastrar Instituição">Cadastrar</a></li>            
-            <li><a href="ListaInstituicoes.do" title="Pesquisar">Pesquisar</a></li>
-            <li><a href="processainstituicao.do" title="Alterar Dados">Alterar</a></li>
-            <li><a href="processainstituicaoexcluir.do" title="Excluir Instituição">Excluir</a>
-            </li>                    
-        </ul>
-        
-        </li>
-	<li><a href="#" title="Porftolio">Provas</a>
-		<ul>
-            <li><a href="#" title="Web design">Cadastrar</a></li>            
-            <li><a href="#" title="Web master">Pesquisar</a></li>
-            <li><a href="#" title="SEO">Alterar</a></li>
-            <li><a href="#" title="Design gr&aacute;fico">Excluir</a>
-            </li>                    
-        </ul>
-	<li class="border0"><a href="#" title="Contato">Area</a>
-            <ul>
-            <li><a href="CadastroArea2.jsp" title="Cadastrar Área">Cadastrar</a></li>            
-            <li><a href="Listaarea.do" title="Exibir Áreas Cadastradas">Pesquisar</a></li>
-            <li><a href="processaalterararea.do" title="Alterar Áreas Cadastradas">Alterar</a></li>
-            <li><a href="processaareaexcluir.do" title="Deletar Áreas">Excluir</a>
-            </li>                    
-        </ul>
-
-</div>
+        </div>
       <div class="sidebar1"><br />
         <ul class="menu_vertical">Professor</ul>
           <ul class="nav">
@@ -89,12 +50,13 @@
           <p align="right">Você não está logado! - Gostaria de <a href="logout.html">Cadastrar-se</a>?</p> 
           <ul class="formulario">
 <%--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%--%>
-            <fieldset>
-                <legend>Atualizar Administrador</legend>
-                <form id="form_validacao" action="BuscarAdministradorAtualizar.do" method="post">
-                  <div class="rowElem"><label>Email:</label><input type="text" name="email" id="nome_al"/></div>
-                  </br></br><input type="submit" value="Buscar" />
-                </form>
+            <%
+                Administrador admin = (Administrador) request.getAttribute("admin");
+            %>
+            <fieldset >
+                <legend>Administrador Alterado</legend>
+                </br><h2><% out.print(admin.getNome()); %> é o novo administrador do sistema.</h2>
+                </br><a href="login.jsp">Retornar à tela de login.</a>
             </fieldset>
 <%--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%--%>            
          </ul><!-- end .content -->

@@ -8,9 +8,18 @@ import javax.persistence.Entity;
 
 /**
  *
- * @author jose
+ * @author Arnaldo Junior
  */
 @Entity
 public class Administrador extends Usuario{
     
+    private boolean admin_atual;
+
+    public boolean getAdmin_atual() {
+        return admin_atual;
+    }
+
+    public void setAdmin_atual(boolean admin_atual) {
+        this.admin_atual = admin_atual;
+    }
 }

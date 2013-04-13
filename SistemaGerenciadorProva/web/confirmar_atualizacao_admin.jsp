@@ -100,7 +100,8 @@
                         <div class="rowElem"><input type="hidden" name="id" id="id_al" value="<%out.print(admin.getId());%>"/></div>
                         <div class="rowElem"><label>Nome:</label><input type="text" name="nome" value="<%out.print(admin.getNome());%>"/></div>
                         <div class="rowElem"><label>Email:</label><input type="text" name="email" value="<%out.print(admin.getEmail());%>"/></div>
-                        <div class="rowElem"><label>Senha:</label><input type="text" name="senha" value="<%out.print(admin.getSenha());%>"/></div></br>
+                        <div class="rowElem"><label>Senha:</label><input type="text" name="senha" value="<%out.print(admin.getSenha());%>"/></div>
+                        <input type="hidden" name="admin_atual" value="<%out.print(admin.getAdmin_atual());%>"/></div></br>
                 
                         <%request.setAttribute("admin", admin);%>
                         </br><input type="submit" value="Atualizar" />

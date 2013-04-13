@@ -7,7 +7,6 @@ package struts;
 import dominio.Administrador;
 import dominio.Aluno;
 import dominio.Professor;
-import dominio.Usuario;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.apache.struts.action.ActionForm;
@@ -43,12 +42,18 @@ public class Login extends org.apache.struts.action.Action {
         
         Session s = util.HibernateUtil.getSession();
         Transaction t = s.beginTransaction();
-        Administrador admin;
+        Administrador admin = new Administrador();
         
         SQLQuery sqlQuery = s.createSQLQuery("SELECT * FROM administrador WHERE email=?");
         sqlQuery.setString(0, request.getParameter("email"));
         sqlQuery.addEntity(Administrador.class);
         admin = (Administrador) sqlQuery.uniqueResult();
+        
+        //Se a conta de administrador estiver desabilitada
+        if ((admin != null) && (admin.getAdmin_atual() == false)) {
+            request.setAttribute("usuario", "desabilitado");
+            return mapping.findForward("success");
+        }
         
         if(admin != null){
             if ((admin.getEmail().equals(request.getParameter("email"))) && (admin.getSenha().equals(request.getParameter("senha")))) {

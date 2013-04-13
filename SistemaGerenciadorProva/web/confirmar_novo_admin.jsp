@@ -1,9 +1,11 @@
 <%-- 
-    Document   : atualizar_administrador
-    Created on : 21/03/2013, 06:56:51
-    Author     : Arnaldo Coelho
+    Document   : confirmar_atualizacao_admin
+    Created on : 21/03/2013, 07:01:34
+    Author     : Arnaldo Junior
 --%>
 
+<%@page import="dominio.AdminAux"%>
+<%@page import="dominio.Administrador"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
@@ -37,8 +39,8 @@
             <li><a href="cadastrar_admin.jsp" title="Cadastrar Instituição">Cadastrar</a></li>            
             <li><a href="buscar_administrador.jsp" title="Pesquisar">Pesquisar</a></li>
             <li><a href="atualizar_administrador.jsp" title="Alterar Dados">Alterar</a></li>
-            <li><a href="deletar_administrador.jsp" title="Excluir Instituição">Excluir</a>
-            </li>                    
+            <li><a href="deletar_administrador.jsp" title="Excluir Instituição">Excluir</a></li>
+            <li><a href="escolher_admin.jsp" title="Excluir Instituição">Escolher Administrador</a></li>
         </ul>
         </li>
         <li><a href="#" title="Servi&ccedil;os">Instituição</a>
@@ -89,12 +91,30 @@
           <p align="right">Você não está logado! - Gostaria de <a href="logout.html">Cadastrar-se</a>?</p> 
           <ul class="formulario">
 <%--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%--%>
-            <fieldset>
-                <legend>Atualizar Administrador</legend>
-                <form id="form_validacao" action="BuscarAdministradorAtualizar.do" method="post">
-                  <div class="rowElem"><label>Email:</label><input type="text" name="email" id="nome_al"/></div>
-                  </br></br><input type="submit" value="Buscar" />
-                </form>
+            <fieldset >
+              <legend>Confirmar Novo Administrador</legend>
+              <form id="form_validacao" action="NovoAdministrador.do" method="post">
+                <% AdminAux adminAux = (AdminAux) request.getAttribute("adminAux");
+                   
+                   if (adminAux.getAdmin().getNome() != null) { %>
+                                            
+                        <div class="rowElem"><label>Nome:</label><h3><%out.print(adminAux.getAdmin().getNome());%></h3></div>
+                        <div class="rowElem"><label>Email:</label><h3><%out.print(adminAux.getAdmin().getEmail());%></h3></div>
+                        <input type="hidden" name="nome" value="<%out.print(adminAux.getAdmin().getNome());%>" />
+                        <input type="hidden" name="email" value="<%out.print(adminAux.getAdmin().getEmail());%>" />
+                        <input type="hidden" name="id" value="<%out.print(adminAux.getAdmin().getId());%>" />
+                        <input type="hidden" name="senha" value="<%out.print(adminAux.getAdmin().getSenha());%>" />
+                        <input type="hidden" name="admin_atual" value="<%out.print(adminAux.getAdmin().getAdmin_atual());%>" />
+                        <input type="hidden" name="email_admin" value="<%out.print(adminAux.getEmail());%>" />
+                        
+                        <%request.setAttribute("admin", adminAux);%>
+                        </br><input type="submit" value="Confirmar" />
+                <% } else { %>
+                        <h2>Administrador não cadastrado!</h2>
+                        <a href="escolher_admin.jsp">Marcar outro usuário como administrador.</a>
+                <% } %>
+                
+              </form>
             </fieldset>
 <%--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%--%>            
          </ul><!-- end .content -->

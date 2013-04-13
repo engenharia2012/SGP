@@ -67,6 +67,12 @@
         <action path="/BuscarAdministrador" type="struts.BuscarAdministrador">
             <forward name="success" path="/administrador_buscado.jsp" />
         </action>
+        <action path="/EscolherAdmin" type="struts.EscolherAdmin">
+            <forward name="success" path="/confirmar_novo_admin.jsp" />
+        </action>
+        <action path="/NovoAdministrador" type="struts.NovoAdministrador">
+            <forward name="success" path="/novo_admin_confirmado.jsp" />
+        </action>
         
         <action path="/ListaInstituicoes" type="struts.ListaInstituicoes">
             <forward name="lista_instituicoes" path="/ListaInstituicoes.jsp" />
@@ -92,6 +98,8 @@
         <action path="/processaarea" type="struts.Listaarea">
             <forward name="listaarea" path="/ListaArea.jsp" />
         </action>
+        
+        
         <action path="/Listararea" type="struts.Listararea"/>
         <action path="/alteraarea" type="struts.alteraarea"/>    
         <action path="/excluiarea" type="struts.excluiarea"/>

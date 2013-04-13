@@ -4,6 +4,7 @@
     Author     : Arnaldo
 --%>
 
+<%@page import="java.util.Enumeration"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
@@ -91,12 +92,14 @@
           <p align="right">Você não está logado! - Gostaria de <a href="logout.html">Cadastrar-se</a>?</p> 
           <ul class="formulario">
 <%--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%--%>
+           
+            
             <fieldset >
               <legend>Login</legend>
               <form id="form_validacao" action="Login.do" method="post">
                 <div class="rowElem"><label>Email:</label><input type="text" name="email" id="email_al"/></div>
                 <div class="rowElem"><label>Senha:</label><input type="text" name="senha" id="senha_al" /></div>
-                </br></br></br><input type="submit" value="Cadastrar" />
+                </br></br></br><input type="submit" value="Confirmar" />
               </form>
             </fieldset>
 <%--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%--%>            

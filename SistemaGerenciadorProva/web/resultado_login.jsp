@@ -105,7 +105,9 @@
                       
                       ob = request.getAttribute("usuario");
                       
-                      if (ob.getClass().isInstance(admin)) {
+                      if (ob.equals("desabilitado")) {
+                          %> <h2>Conta desabilitada!</h2> <%
+                      } else if (ob.getClass().isInstance(admin)) {
                           %> <h2>Administrador</h2> <%
                       } else if (ob.getClass().isInstance(prof)) {
                           %> <h2>Professor</h2> <%
@@ -116,7 +118,9 @@
                       } else if (ob.equals("incorreto")) {
                           %> <h2>Senha incorreta!</h2> <%
                       }
-                  %>                  
+                  %>
+                  <a href="login.jsp"> Retornar à tela de login. </a>
+                  
               </form>
             </fieldset>
 <%--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%--%>            

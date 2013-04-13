@@ -45,6 +45,7 @@ public class AtualizarAdministrador extends org.apache.struts.action.Action {
         admin.setNome(request.getParameter("nome"));
         admin.setEmail(request.getParameter("email"));
         admin.setSenha(request.getParameter("senha"));
+        admin.setAdmin_atual(Boolean.parseBoolean(request.getParameter("admin_atual")));
         
         adminDao.addOrUpd(admin);
         

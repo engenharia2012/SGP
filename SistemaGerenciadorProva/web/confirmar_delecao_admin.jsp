@@ -38,8 +38,8 @@
             <li><a href="cadastrar_admin.jsp" title="Cadastrar Instituição">Cadastrar</a></li>            
             <li><a href="buscar_administrador.jsp" title="Pesquisar">Pesquisar</a></li>
             <li><a href="atualizar_administrador.jsp" title="Alterar Dados">Alterar</a></li>
-            <li><a href="deletar_administrador.jsp" title="Excluir Instituição">Excluir</a>
-            </li>                    
+            <li><a href="deletar_administrador.jsp" title="Excluir Instituição">Excluir</a></li>
+            <li><a href="escolher_admin.jsp" title="Excluir Instituição">Escolher Administrador</a></li>
         </ul>
         </li>
         <li><a href="#" title="Servi&ccedil;os">Instituição</a>
@@ -100,7 +100,8 @@
                         <div class="rowElem"><input type="hidden" name="id" id="id_al" value="<%out.print(admin.getId());%>"/></div>
                         <div class="rowElem"><label>Nome:</label><input type="text" name="nome" value="<%out.print(admin.getNome());%>"/></div>
                         <div class="rowElem"><label>Email:</label><input type="text" name="email" value="<%out.print(admin.getEmail());%>"/></div>
-                        <div class="rowElem"><label>Senha:</label><input type="text" name="senha" value="<%out.print(admin.getSenha());%>"/></div></br></br>
+                        <div class="rowElem"><label>Administrador:</label><input type="text" name="admin_atual" value="<%out.print(admin.getAdmin_atual());%>"/></div>
+                        <div class="rowElem"><input type="hidden" name="senha" value="<%out.print(admin.getSenha());%>"/></div></br></br>
                         
                         <%request.setAttribute("admin", admin); %>
                         
@@ -109,6 +110,7 @@
                  <% } else { %>
                         <h2>Administrador não cadastrado!</h2>
                  <% } %>
+                 <a href="deletar_administrador.jsp"> Excluir outro administrador. </a>
                 
               </form>
             </fieldset>
