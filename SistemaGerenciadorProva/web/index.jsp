@@ -109,7 +109,7 @@
   <ul class="formulario">
     <fieldset>
 	   <legend>Cadastro Professor</legend>
-<form id="f1" class="validate" action="" method="post" >
+                <form id="f1" class="validate" action="" method="post" >
                 
                 <p>
                  <label>Nome:</label>

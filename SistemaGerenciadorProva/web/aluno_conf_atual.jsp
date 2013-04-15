@@ -97,9 +97,10 @@
               <form id="form_validacao" action="AtualizarAluno.do" method="post">
               
                 <%Aluno a = (Aluno) request.getAttribute("ala");%>
+                <div class="rowElem"><label>Cod:</label><input type="text" name="id_a" value="<%out.print(a.getId());%>"/></div>
                 <div class="rowElem"><label>Nome:</label><input type="text" name="nome_a" value="<%out.print(a.getNome());%>"/></div>
                 <div class="rowElem"><label>Email:</label><input type="text" name="email_a" value="<%out.print(a.getEmail());%>"/></div>
-                <div class="rowElem"><label>Senha:</label><input type="text" name="senha_a" value="<%out.print(a.getSenha());%>"/></div></div><br />
+                <div class="rowElem"><label>Senha:</label><input type="text" name="senha_a" value="<%out.print(a.getSenha());%>"/></div><br />
                 <input type="submit" value="Atualizar" />
               </form>
               <a href='prof_inicial.jsp'>Voltar a pagina inicial</a>  

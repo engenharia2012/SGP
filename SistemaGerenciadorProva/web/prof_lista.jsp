@@ -18,7 +18,6 @@
     <script language="javascript" type="text/javascript" src="libs/validacao.js"></script>
     <link href="style/style.css"  rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="libs/jqtransformplugin/jqtransform.css" type="text/css" media="all" />
-
 	
     <script type="text/javascript" src="libs/requiered/jquery.js" ></script>
     <script type="text/javascript" src="libs/jqtransformplugin/jquery.jqtransform.js" ></script>
@@ -80,19 +79,41 @@
           <ul class="formulario">
 <%--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%--%>            
             <fieldset >
-              <legend>Cadastro Professor</legend>
+              <legend>Lista de Professores</legend>
               
-                <%
-                List<Professor> professores = (List) request.getAttribute("profs");
+                <%List<Professor> professores = (List) request.getAttribute("profs");%>
                 
-                for( Professor cont : professores){
-                    out.println("<br/><option value=" + cont.getId()+ ">" + cont.getNome()+"</option>");
-                }
-                %>
+                  <table id="opiniao" summary="lista de eventos.">
+                    <thead>
+                      <tr id="horizontal">
+                        <th>Matricula</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Cpf</th>
+                      </tr>
+                    </thead>
+        
+                    <tbody>
+                      <%
+                        for (Professor p: professores) {%>
+                          <tr>
+                            <th scope="row"><%out.println(p.getId());%></th>
+                            <td><%out.println(p.getNome());%></td>
+                            <td><%out.println(p.getCpf());%></td>
+                          </tr>
+                      <%}%>
+                    </tbody>
+                    <tfoot id="tf">
+                      <tr>
+                        <th colspan="8">lista de professores</th>
+                      </tr>
+                    </tfoot>
+                  </table>
                 
               
               <a href='prof_inicial.jsp'>Voltar a pagina inicial</a>  
             </fieldset>
+                
+
 <%--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%--%>            
          </ul><!-- end .content -->
        </div>

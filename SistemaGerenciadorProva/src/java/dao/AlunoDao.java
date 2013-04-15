@@ -21,5 +21,11 @@ public class AlunoDao extends dao{
         c.add(Expression.eq("nome", nome));
         return (Aluno) c.uniqueResult();
     }
+    @Override
+    public Aluno findById(Long id){
+        Criteria c = getSession().createCriteria(Aluno.class);
+        c.add(Expression.eq("id", id));
+        return (Aluno) c.uniqueResult();
+    }
     
 }

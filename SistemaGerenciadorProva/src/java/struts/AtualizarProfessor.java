@@ -44,21 +44,24 @@ public class AtualizarProfessor extends org.apache.struts.action.Action {
         
         ProfessorDao pDao = new ProfessorDao();
         
-        
-        Professor pro = (Professor) pDao.findByName(request.getParameter("nome"));
-        
+        Professor pro = (Professor) pDao.findById(Long.parseLong(request.getParameter("cod")));
+        //Professor pro = (Professor) pDao.findByName(request.getParameter("nome"));
+        //Professor pro = (Professor) request.getAttribute("profatual");
         if(pro!=null){
-            if(pro.getNome().equals(request.getParameter("nome"))){
+            if(!pro.getNome().equals(request.getParameter("nome"))){
                 pro.setNome(request.getParameter("nome")); 
-            } if(pro.getEmail().equals(request.getParameter("email"))){
+            } if(!pro.getEmail().equals(request.getParameter("email"))){
                 pro.setEmail(request.getParameter("email")); 
-            } if(pro.getSenha().equals(request.getParameter("senha"))){
-                pro.setSenha(request.getParameter("senha")); 
-            } if(pro.getCpf().equals(request.getParameter("cpf"))){
+            } if(!pro.getSenha().equals(request.getParameter("password"))){
+                pro.setSenha(request.getParameter("password")); 
+            } if(!pro.getCpf().equals(request.getParameter("cpf"))){
                 pro.setCpf(request.getParameter("cpf")); 
             }
         }
-        pDao.addOrUpd(pro);
+        s.update(pro);
+        //pDao.addOrUpd(pro);
+        t.commit();
+        //s.close();
         request.setAttribute("pro", pro);
         return mapping.findForward(SUCCESS);
     }

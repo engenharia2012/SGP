@@ -94,7 +94,7 @@
             <fieldset >
                 <legend>Buscar Aluno para Editar</legend>
                 <form id="form_validacao" action="BuscarAlunoAtualizar.do" method="post">
-                  <div class="rowElem"><label>Nome:</label><input type="text" name="nomea" id="nome_al"/></div></br></br>
+                  <div class="rowElem"><label>Nome:</label><input type="text" name="nomea" id="nome_al"/></div>
                   <input type="submit" value="Buscar" />
                 </form>
             </fieldset>

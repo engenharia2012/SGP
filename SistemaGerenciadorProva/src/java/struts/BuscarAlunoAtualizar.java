@@ -43,10 +43,16 @@ public class BuscarAlunoAtualizar extends org.apache.struts.action.Action {
         Transaction t = s.beginTransaction();
         
         AlunoDao ad = new AlunoDao();
-        String nome = request.getParameter("nomea");
-        Aluno a = (Aluno) ad.findByName(nome);
         
-        request.setAttribute("ala", a);
+        Aluno a = (Aluno) ad.findByName(request.getParameter("nomea"));
+        if(a!=null){
+            request.setAttribute("ala", a);
+        }
+        else{
+            a = new Aluno();
+            a.setNome("Aluno não existe");
+            request.setAttribute("ala", a);
+        }
         
         return mapping.findForward(SUCCESS);
         

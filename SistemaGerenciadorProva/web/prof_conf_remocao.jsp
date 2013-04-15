@@ -79,7 +79,7 @@
           <ul class="formulario">
 <%--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%--%>            
             <fieldset >
-              <legend>onfirmar Remoção</legend>
+              <legend>Confirmar Remoção</legend>
               <form id="form_validacao" action="RemoverProfessor.do" method="post">
                 <%Professor p = (Professor) request.getAttribute("profremove");%>
                 <div class="rowElem"><label>Nome:</label><input type="text" name="nome" id="nome" value="<%out.print(p.getNome());%>"/></div>

@@ -80,7 +80,7 @@
           <p align="right">Seja bem vindo, <font color="red">Fulano </font> | Gostaria de:<a href="logout.html">Alterar Perfil</a> | <a href="logout.html">Sair do sistema</a></p> 
           <ul class="formulario">
 <%--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%--%>            
-<fieldset >
+            <fieldset>
               <legend>Cadastro Professor</legend>
               <form id="form_validacao" action="CadastrarProfessor.do" method="post">
                 <div class="rowElem"><label>Nome:</label><input type="text" name="nome" id="nome"/></div>
@@ -124,5 +124,3 @@
      </div><!-- end .container -->
    </body>
 </html>
-
-

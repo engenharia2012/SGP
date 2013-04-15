@@ -45,7 +45,7 @@ public class AtualizarAluno extends org.apache.struts.action.Action {
         AlunoDao aDao = new AlunoDao();
         
         
-        Aluno al = (Aluno) aDao.findByName(request.getParameter("nome"));
+        Aluno al = (Aluno) aDao.findById(Long.parseLong(request.getParameter("id_a")));
         
         if(al!=null){
             if(al.getNome().equals(request.getParameter("nome_a"))){
@@ -55,8 +55,13 @@ public class AtualizarAluno extends org.apache.struts.action.Action {
             } if(al.getSenha().equals(request.getParameter("senha_a"))){
                 al.setSenha(request.getParameter("senha_a")); 
             }
+            s.update(al);
         }
-        aDao.addOrUpd(al);
+        else{
+            al = new Aluno();
+        }
+        //aDao.addOrUpd(al);
+        
         request.setAttribute("allu", al);
         
         return mapping.findForward(SUCCESS);

@@ -26,4 +26,10 @@ public class ProfessorDao extends dao{
         c.add(Expression.eq("nome", nome));
         return (Professor) c.uniqueResult();
     }
+    @Override
+    public Professor findById(Long id){
+        Criteria c = getSession().createCriteria(Professor.class);
+        c.add(Expression.eq("id", id));
+        return (Professor) c.uniqueResult();
+    }
 }

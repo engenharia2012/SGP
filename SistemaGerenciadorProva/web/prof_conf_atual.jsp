@@ -82,6 +82,7 @@
               <legend>Cadastro Professor</legend>
               <form id="form_validacao" action="AtualizarProfessor.do" method="post">
                 <%Professor p = (Professor) request.getAttribute("profatual");%>
+                <div class="rowElem"><label>Cod:</label><input type="text" name="cod" id="cod" value="<%out.print(p.getId());%>"/></div>
                 <div class="rowElem"><label>Nome:</label><input type="text" name="nome" id="nome" value="<%out.print(p.getNome());%>"/></div>
                 <div class="rowElem"><label>Email:</label><input type="text" name="email" id="email" value="<%out.print(p.getEmail());%>"/></div>
                 <div class="rowElem"><label>Senha:</label><input type="text" name="senha" id="senha" value="<%out.print(p.getSenha());%>"/></div>

@@ -53,13 +53,15 @@ public class RemoverProfessor extends org.apache.struts.action.Action {
         } else{
             request.setAttribute("prof_del", prof);
             
-            //Area a = prof.getArea();
-            //Instituicao i = prof.getInst();
+            Area a = prof.getArea();
+            Instituicao i = prof.getInst();
             // REMOVER RELAÇÃO COM ÁREA E INSTITUIÇÃO
-            //a.getProfessores().remove(prof);
-            //i.getProfessores().remove(prof);
+            a.getProfessores().remove(prof);
+            i.getProfessores().remove(prof);
             // REMOVER PROFESSOR
             //profDao.del(prof);
+            //s.delete(prof);
+            //t.commit();
         }
         
         return mapping.findForward(SUCCESS);
